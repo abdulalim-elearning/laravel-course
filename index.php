@@ -1,33 +1,40 @@
 <?php
-// Encapsulation:
-class BankAccount {
-    private $balance;
+// Polymorphism (Interface):
+interface Shape {
+    public function calculateArea();
+}
 
-    function __construct($initialBalance) {
-        $this->balance = $initialBalance;
+class Circle implements Shape {
+    private $radius;
+
+    function __construct($radius) {
+        $this->radius = $radius;
     }
 
-    public function deposit($amount) {
-        $this->balance += $amount;
-    }
-
-    public function withdraw($amount) {
-        if ($amount <= $this->balance) {
-            $this->balance -= $amount;
-        } else {
-            echo "Insufficient funds.";
-        }
-    }
-
-    public function getBalance() {
-        return $this->balance;
+    public function calculateArea() {
+        return 3.14 * $this->radius * $this->radius;
     }
 }
 
-$account = new BankAccount(1000);
-$account->deposit(500);
-$account->withdraw(200);
-echo "Balance: $" . $account->getBalance();
+class Rectangle implements Shape {
+    private $width;
+    private $height;
+
+    function __construct($width, $height) {
+        $this->width = $width;
+        $this->height = $height;
+    }
+
+    public function calculateArea() {
+        return $this->width * $this->height;
+    }
+}
+
+$circle = new Circle(5);
+$rectangle = new Rectangle(4, 6);
+
+echo "Circle Area: " . $circle->calculateArea() . "<br>";
+echo "Rectangle Area: " . $rectangle->calculateArea();
 
 
 ?>
