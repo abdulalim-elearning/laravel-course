@@ -1,21 +1,21 @@
 <?php
-// Class Definition:
-class Person {
-    public $name;
-    public $age;
+// Class Inheritance:
+class Student extends Person {
+    public $studentID;
 
-    function __construct($name, $age) {
-        $this->name = $name;
-        $this->age = $age;
+    function __construct($name, $age, $studentID) {
+        parent::__construct($name, $age);
+        $this->studentID = $studentID;
     }
 
-    function greet() {
-        echo "Hello, my name is " . $this->name . " and I am " . $this->age . " years old.";
+    function study() {
+        echo $this->name . " is studying.";
     }
 }
 
-$person = new Person("John", 30);
-$person->greet();
+$student = new Student("Alice", 22, "S12345");
+$student->greet();
+$student->study();
 
 
 ?>
