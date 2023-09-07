@@ -1,3 +1,6 @@
 <?php
-echo "Hello, World!";
+$name = "John";
+$age = 30;
+$isStudent = true;
+
 ?>
