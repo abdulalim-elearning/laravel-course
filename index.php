@@ -1,9 +1,6 @@
 <?php
-function add($a, $b) {
-    return $a + $b;
-}
+$fruits = array("apple", "banana", "cherry");
+echo "I like " . $fruits[0];
 
-$result = add(5, 3);
-echo "5 + 3 = $result";
 
 ?>
