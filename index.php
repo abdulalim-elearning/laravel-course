@@ -1,12 +1,9 @@
 <?php
-for ($i = 1; $i <= 5; $i++) {
-    echo "Iteration $i<br>";
+function add($a, $b) {
+    return $a + $b;
 }
 
-$colors = array("red", "green", "blue");
-foreach ($colors as $color) {
-    echo "$color<br>";
-}
-
+$result = add(5, 3);
+echo "5 + 3 = $result";
 
 ?>
