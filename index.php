@@ -1,21 +1,33 @@
 <?php
-// Class Inheritance:
-class Student extends Person {
-    public $studentID;
+// Encapsulation:
+class BankAccount {
+    private $balance;
 
-    function __construct($name, $age, $studentID) {
-        parent::__construct($name, $age);
-        $this->studentID = $studentID;
+    function __construct($initialBalance) {
+        $this->balance = $initialBalance;
     }
 
-    function study() {
-        echo $this->name . " is studying.";
+    public function deposit($amount) {
+        $this->balance += $amount;
+    }
+
+    public function withdraw($amount) {
+        if ($amount <= $this->balance) {
+            $this->balance -= $amount;
+        } else {
+            echo "Insufficient funds.";
+        }
+    }
+
+    public function getBalance() {
+        return $this->balance;
     }
 }
 
-$student = new Student("Alice", 22, "S12345");
-$student->greet();
-$student->study();
+$account = new BankAccount(1000);
+$account->deposit(500);
+$account->withdraw(200);
+echo "Balance: $" . $account->getBalance();
 
 
 ?>
