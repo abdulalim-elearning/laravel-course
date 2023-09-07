@@ -1,9 +1,6 @@
 <?php
-// File Operations:
-$file = fopen("example.txt", "r");
-while (!feof($file)) {
-    echo fgets($file);
-}
-fclose($file);
+// Sessions:
+session_start();
+$_SESSION['username'] = 'john_doe';
 
 ?>
