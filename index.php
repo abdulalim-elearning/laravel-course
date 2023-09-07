@@ -1,8 +1,12 @@
 <?php
-if ($age >= 18) {
-    echo "You are an adult.";
-} else {
-    echo "You are a minor.";
+for ($i = 1; $i <= 5; $i++) {
+    echo "Iteration $i<br>";
 }
+
+$colors = array("red", "green", "blue");
+foreach ($colors as $color) {
+    echo "$color<br>";
+}
+
 
 ?>
