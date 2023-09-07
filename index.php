@@ -1,4 +1,9 @@
 <?php
-// Super Globals:
-echo "Your IP address is: " . $_SERVER['REMOTE_ADDR'];
+// File Operations:
+$file = fopen("example.txt", "r");
+while (!feof($file)) {
+    echo fgets($file);
+}
+fclose($file);
+
 ?>
